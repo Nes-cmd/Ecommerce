@@ -17,6 +17,7 @@ E-commerce website developed with laravel framework, livewire component, tailwin
 
 ## Products
 <img src="public/intro/products.png" style="width:50%">
+<img src="public/intro/cart_and_payment_page.png" style="width:33%">
 
 ## Cart and payment proceed page
 <img src="public/intro/cart_and_payment_page.png" style="width:33%">
@@ -27,7 +28,7 @@ E-commerce website developed with laravel framework, livewire component, tailwin
 ## Product Editor for admin
 <img src="public/intro/admin.png" style="width:33%">
 
-## This project is for
+## This project is for 
 
 if we consider
 
