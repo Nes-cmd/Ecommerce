@@ -28,6 +28,6 @@ E-commerce website developed with laravel framework, livewire component, tailwin
 ### Product Editor for admin
 <img src="public/intro/admin.png">
 
-### Example for The clients whoneed E-commerce website with laravel and livewire 
+### Example for The clients who need E-commerce website with laravel and livewire 
 
 
