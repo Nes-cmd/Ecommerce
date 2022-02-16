@@ -12,23 +12,22 @@
 
 E-commerce website developed with laravel framework, livewire component, tailwind-css front end framework 
 
- ## Banner and Product slider page
- <img src="public/intro/banner_and _slider.png" style="width:50%">
+## screen shots of some pages are shown below.
 
-## Products
-<img src="public/intro/products.png" style="width:50%">
-<img src="public/intro/cart_and_payment_page.png" style="width:33%">
+### Banner and Product slider page
+ <img src="public/intro/banner_and _slider.png">
 
-## Cart and payment proceed page
-<img src="public/intro/cart_and_payment_page.png" style="width:33%">
+### Products
+<img src="public/intro/products.png" >
+### Cart and payment proceed page
+<img src="public/intro/cart_and_payment_page.png">
 
-## Product detail page
-<img src="public/intro/detail_view.png" style="width:33%">
+### Product detail page
+<img src="public/intro/detail_view.png">
 
-## Product Editor for admin
-<img src="public/intro/admin.png" style="width:33%">
+### Product Editor for admin
+<img src="public/intro/admin.png">
 
-## This project is for 
+### Example for The clients whoneed E-commerce website with laravel and livewire 
 
-if we consider
 
