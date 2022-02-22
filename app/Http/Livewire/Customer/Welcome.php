@@ -5,12 +5,23 @@ namespace App\Http\Livewire\Customer;
 use Livewire\Component;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Subscriber;
 use DB;
 class Welcome extends Component
 {
     public $category;
-
+    public $subscriber_email;
     
+    public function subscribe()
+    {
+        $this->validate([
+            'subscriber_email' => 'required'
+        ]);
+        Subscriber::create(['email' => $this->subscriber_email]);
+        session()->flash('subscribed' , 'Thank you to subscribe to our newslater');
+        $this->subscriber_email = '';
+        redirect()->route('customer.welcome');
+    }
     public function render() 
     {
         $products = DB::table('categories')

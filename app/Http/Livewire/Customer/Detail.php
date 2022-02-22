@@ -29,6 +29,7 @@ class Detail extends Component
     public function buynow($id)
     {
         $this->emit('toCart', $id);
+        sleep(0.2);
         redirect()->route('customer.proceed');
     }
     public function star($rate)
