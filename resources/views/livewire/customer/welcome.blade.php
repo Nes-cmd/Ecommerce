@@ -47,7 +47,7 @@
                 </a>
                 <div class="p-2">
                     <div class="text-gray-800">
-                        <a href="{{route('customer.detail', $product->id)}}" class="">{{$product->name }} <i class="text-green-600 text-md">{{$product->price .' birr'}}</i></a>
+                        <a href="{{route('customer.detail', $product->id)}}" class="truncate">{{$product->name }} <i class="text-green-600 text-md">{{$product->price .' birr'}}</i></a>
                     </div>
                     <div class="flex md:flex-row flex-col justify-between">
                         <button wire:click="$emit('toCart' , {{$product->id}} )" class="bg-gradient-to-r from-red-400 to-pink-800 rounded-full py-2 px-4 h-6 flex justify-center items-center mb-2">
@@ -56,12 +56,12 @@
                             </svg>
                             <h2>{{__('welcome.addToCart')}}</h2>
                         </button>
-                        <a href="{{route('customer.detail', $product->id)}}" class="mb-2 bg-gradient-to-r from-red-400 to-pink-800 rounded-full py-2 px-4 text-gray hover:bg-blue-600 text-sm flex justify-center items-center h-6">
+                        <!-- <a href="{{route('customer.detail', $product->id)}}" class="mb-2 bg-gradient-to-r from-red-400 to-pink-800 rounded-full py-2 px-4 text-gray hover:bg-blue-600 text-sm flex justify-center items-center h-6">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6   inline-block" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                             <h2>{{__('welcome.viewDetail')}}</h2>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
             </div>
@@ -86,10 +86,11 @@
     <div class="rounded-lg my-20 shadow-lg flex flex-row">
         <div class="p-10 lg:w-3/5 w-full bg-gradient-to-r from-red-600  to-blue-900 md:bg-gradient-to-r rounded-3xl md:from-red-500 md:via-purple-800 md:to-transparent">
             <div class="text-gray-200 lg:w-2/3 w-full">
-                <p class="text-3xl font-extrabold">{{__('welcome.subscribeTitle')}}</p>
+                @if(session()->has('subscribed'))<p class="bg-green-500 h-8 rounded-lg pl-2 flex items-center" >{{session()->get('subscribed')}}</p>@endif
+                <p class="text-3xl font-extrabold ml-2">{{__('welcome.subscribeTitle')}}</p>
                 <p class="leading-relaxed">{{__('welcome.subscribeBody')}}</p>
-                <input type="email" placeholder="{{ __('welcome.enterEmail') }}" class="w-full mt-2 mb-2 placeholder-gray-400 rounded-lg bg-gray-600 py-3 px-4 text-gray-200">
-                <button class="bg-red-600 py-3 w-full rounded-lg" type="submit">{{__('welcome.subscribe')}}</button>
+                <input wire:model.lazy="subscriber_email" type="email" placeholder="{{ __('welcome.enterEmail') }}" class="w-full mt-2 mb-2 placeholder-gray-200 rounded-lg bg-gray-600 py-3 px-4 text-gray-200">
+                <button wire:click="subscribe" class="bg-gray-800 py-3 w-full rounded-lg" type="button">{{__('welcome.subscribe')}}</button>
             </div>
         </div>
         <div class="lg:w-2/5 w-full lg:flex lg:flex-row hidden">

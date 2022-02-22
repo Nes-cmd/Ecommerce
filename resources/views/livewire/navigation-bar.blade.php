@@ -19,9 +19,9 @@
                 </button>
             </div>
             @endauth
-            <div class="text-3xl text-white">
+            <a href="{{ route('customer.welcome')}}" class="text-3xl text-white">
                 Logo
-            </div>
+            </a>
             @livewire('search-bar')
             <div class="icons text-white flex items-center md:space-x-3">
                 @livewire('customer.cart')

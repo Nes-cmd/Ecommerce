@@ -1,9 +1,9 @@
 
-<div class="sidebar hidden md:flex bg-gray-800 border-t border-gray-500 w-1/6 h-screen rounded-br-full">
+<div class="sidebar hidden md:flex bg-gray-800 border-t border-gray-500 w-1/6 h-screen rounded-br-lg">
     <div class="text-white">
         <div class="border-b border-gray-500">
             <div class="font-bild text-2xl mt-3 pl-1 mb-2 rounded-full bg-gray-700">
-                {{__('main')}}
+                {{__('sidebar.main')}}
             </div>
             <div class="pl-5 mb-3 hover:text-yellow-500 items-center {{request()->routeIs('admin.dashboard')?'text-yellow-500':''}}">
                 <a href="{{ route('admin.dashboard')}}" class="flex flex-row">

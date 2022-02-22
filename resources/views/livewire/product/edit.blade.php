@@ -69,6 +69,7 @@ Detail
                     <label class="pl-4" for="desc">Popular: </label>
                     <input wire:model="product.speciality" class="pl-2 h-10 w-7" type="checkbox" chacked="false">
                 </div>
+                @if(env('COLOR_OPTION'))
                 <div>
                     <div class="space-x-2 flex font-semibold mb-2">
                         <label for="desc">Color: </label>
@@ -77,7 +78,10 @@ Detail
                         <input wire:model.lazy="color.2" class="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200" name="size" type="color" >
                         <input wire:model.lazy="color.3" class="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200" name="size" type="color" >
                         <input wire:model.lazy="color.4" class="w-9 h-9 flex items-center justify-center rounded-full border-2 border-gray-200" name="size" type="color" >
-                    </div>                </div>                <div class="flex h-10 space-x-3">
+                    </div>                
+                </div>  
+                @endif              
+                <div class="flex h-10 space-x-3">
                     <button class="w-1/2 flex items-center justify-center rounded-full bg-purple-700 text-white" type="submit">Save changes</button>
                 </div>
             </form>        

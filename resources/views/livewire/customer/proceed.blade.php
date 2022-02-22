@@ -7,7 +7,7 @@
     <div>
         <h2 class="text-gray-600 text-2xl">{{__('proceed.youChoose')}}</h2>
     </div>
-    <div class="disable">
+    <div class="">
         <div class="md:flex">
             <table class="table-auto bg-gray-300 rounded-lg flex-1 ">
                 <tr>
@@ -16,7 +16,7 @@
                         <th>{{__('proceed.name')}}</th>
                         <th>{{__('proceed.price')}}(1)</th>
                         <th>{{__('proceed.quantity')}}</th> 
-                        <th>{{__('proceed.Color')}}</th>
+                        @if(env('COLOR_OPTION')) <th>{{__('proceed.Color')}}</th> @endif
                         <th>{{__('proceed.totalPrice')}}</th>
                         <th>{{__('proceed.action')}}</th>
                     </thead>
@@ -36,6 +36,7 @@
                         <td class="px-2">
                             <input wire:model.lazy="cart.{{$product['id']}}.quantity" type="number" min="1" value="{{ $product['quantity']}}" class="w-20 text-center rounded-lg">
                         </td>
+                        @if(env('COLOR_OPTION'))
                         <td class="px-2">
                             <div class="space-x-2 flex text-sm font-medium">
                                 @php($colors = json_decode($product['color']))
@@ -51,6 +52,7 @@
                                 @endif
                             </div>
                         </td>
+                        @endif
                         <td class="px-2">{{ $product['quantity']* $product['price']}}</td>
                         <td class="px-2">
                             <button wire:click="removeCart({{$product['id']}})" class="text-red-800">
@@ -157,46 +159,47 @@
                             @enderror
                         </div>
                         <div class="pl-3 mt-4 flex justify-center items-center w-full">
-                            <button wire:click="saveAdress" type="button" id="city" class="flex rounded items-center justify-center bg-green-400 h-8 pl-2 pr-2 ml-2 w-1/2" >{{__('proceed.saveAddress')}}</button>
+                            <button wire:click="saveAdress" type="button" id="city" class="flex rounded items-center justify-center bg-gray-800 text-white h-8 pl-2 pr-2 ml-2 w-1/2" >{{__('proceed.saveAddress')}}</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="bg-gradient-to-r from-red-400 to-blue-600 h-10 mt-2 w-1/3 rounded-lg flex justify-center items-center ml-10">
+        <div class="bg-gradient-to-r from-red-400 to-pink-800 py-2 px-4 h-10 mt-2 w-1/3 rounded-lg flex justify-center items-center ml-10">
             <button wire:click="proceed" class="w-full flex justify-center">
                 {{__('proceed.proceed')}}
             </button>
         </div>
     </div>
+    <!-- proceed -->
     @if($proceeded)
-    <div class="flex flex-col bg-gray-300 mt-10 w-full rounded-lg">
+    <div class="flex flex-col bg-gray-300 mt-10 mb-4 w-full rounded-lg">
         <div class="mb-2">
             <div class="text-center text-2xl">
                 {{__('proceed.readCarefuly')}}!
             </div>
             <div class="flex">
-                <div  wire:click="setPaymentMethod(1)" class="w-24 h-16 md:h-32 md:w-40 ml-2 rounded-lg text-red-400">
+                <div  wire:click="setPaymentMethod(1)" class="w-24 h-16 md:h-32 md:w-40 ml-2 rounded-lg @if($paymentMethod->id == 1) p-1 bg-blue-600 @endif">
                     <img src="{{ asset('images/digital_wallets_logo/bank.jpg')}}" class="rounded-lg md:h-32 h-16" alt="">
                 </div> 
-                <div wire:click="setPaymentMethod(2)" class="w-24 h-16 md:h-32 md:w-40 ml-2 rounded-lg text-red-400">
+                <div wire:click="setPaymentMethod(2)" class="w-24 h-16 md:h-32 md:w-40 ml-2 rounded-lg @if($paymentMethod->id == 2) p-1 bg-blue-600 @endif">
                     <img src="{{ asset('images/digital_wallets_logo/telebirr.jpg')}}" class="rounded-lg md:h-32 h-16" alt="">
                 </div> 
-                <div wire:click="setPaymentMethod(3)" class="w-24 h-16 md:h-32 md:w-40 ml-2 rounded-lg text-red-400">
+                <div wire:click="setPaymentMethod(3)" class="w-24 h-16 md:h-32 md:w-40 ml-2 rounded-lg @if($paymentMethod->id == 3) p-1 bg-blue-600 @endif">
                     <img src="{{ asset('images/digital_wallets_logo/mbirr.jpg')}}" class="rounded-lg md:h-32 h-16" alt="">
                 </div> 
-                <div wire:click="setPaymentMethod(4)" class="w-24 h-16 md:h-32 md:w-40 ml-2 rounded-lg text-red-400">
+                <div wire:click="setPaymentMethod(4)" class="w-24 h-16 md:h-32 md:w-40 ml-2 rounded-lg @if($paymentMethod->id == 4) p-1 bg-blue-600 @endif">
                     <img src="{{ asset('images/digital_wallets_logo/amole.jpg')}}" class="rounded-lg md:h-32 h-16" alt="">
                 </div> 
-                <div class="w-24 h-16 md:h-32 md:w-40 ml-2 rounded-lg text-red-400">
+                <div wire:click="setPaymentMethod(4)" class="w-24 h-16 md:h-32 md:w-40 ml-2 rounded-lg @if($paymentMethod->id == 5) p-1 bg-blue-600 @endif">
                     <img src="{{ asset('images/digital_wallets_logo/cbe.jpg')}}" class="rounded-lg md:h-32 h-16" alt="">
                 </div> 
             </div>
             <!-- Alla then -->
         </div>
-        <div class="mt-3">
-            <h2 class="bg-gradient-to-l from-red-400 to-purple-700 text-xl rounded font-semibold p-3">{{__('proceed.instructionFor')}} {{$paymentMethod->method_name}}</h2>
-            <div class="bg-gray-400 pl-6 pr-3 rounded-b-lg">
+        <div class="mt-3 mb-6">
+            <h2 class="bg-gradient-to-l from-red-400 to-purple-700 text-xl rounded font-semibold p-3 text-white">{{__('proceed.instructionFor')}} {{$paymentMethod->method_name}}</h2>
+            <div class="bg-gray-400 pl-6 pr-3 rounded-b-lg mt-3 pb-4">
                 
                 <h2>1 {{$paymentMethod->first_instruction}}</h2>
                 <p>2 {{__('proceed.transfer',  ['ammount' => $total])}}</p>
@@ -219,7 +222,7 @@
                 @enderror
                 
                 <div class="flex ml-5 md:w-2/3">
-                    <button wire:click="placeOrder" class="bg-gradient-to-r from-pink-500 to-green-600 h-10 w-1/3 rounded-lg">{{__('proceed.placeOrder')}}</button>
+                    <button wire:click="placeOrder" class="bg-gradient-to-r from-red-400 to-pink-800 h-10 w-1/3 rounded-lg">{{__('proceed.placeOrder')}}</button>
                 </div>
             </div>
         </div>

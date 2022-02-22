@@ -5,7 +5,7 @@ return [
     'products'=> 'Products',
     'myProducts'=> 'My products',
     'uploadProducts'=> 'Upload products',
-    'orders'=> 'Add photos',
+    'orders'=> 'Orders',
     'others'=> 'Others',
     'manageCategories'=> 'Manage categories',
     'addPhotos'=> 'Add photo',
