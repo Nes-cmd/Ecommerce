@@ -19,7 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->boolean('onfront_page')->default(0);
             // $table->unsignedBigInteger('created_by', 0);
             $table->foreignId('created_by')->on('users');
-            // $table->timestamps();
+            $table->timestamps();
         });
     }
 
