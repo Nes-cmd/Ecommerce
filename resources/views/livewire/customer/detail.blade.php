@@ -25,7 +25,7 @@
                     </h1>
                     <p class="w-full pb-3">{{$product->description}}</p>
                     <div class="text-4xl flex items-end leading-7 font-bold text-purple-600">
-                        {{$product->price}} <h3 class="pl-2 text-sm">birr</h3>
+                        {{number_format($product->price,2)}} <h3 class="pl-2 text-sm">birr</h3>
                     </div>
                     @if($product->status)
                     <div class="text-sm font-medium text-green-900 ml-3">

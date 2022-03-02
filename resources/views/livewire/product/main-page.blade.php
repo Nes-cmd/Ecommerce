@@ -29,7 +29,7 @@
                         </td>
                         <td class="px-2">{{ $product->name}}</td>
                         <td class="px-2">{{ $product->description}}</td>
-                        <td class="px-2">{{$product->price}}</td>
+                        <td class="px-2">{{ number_format($product->price, 2)}}</td>
                         <td class="px-2">{{ $product->category_id}}</td>
                         <td class="px-2">
                             <button wire:click="delete({{$product->id}})" class="text-red-800">

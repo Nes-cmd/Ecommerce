@@ -32,7 +32,7 @@
                             <img src="{{ asset('storage/'.json_decode($product['photo_url'])->photo_1)}}" class="rounded-lg w-32 h-28" alt="">
                         </td>
                         <td class="">{{ $product['name']}}</td>
-                        <td class="md:px-2">{{$product['price'] }}</td>
+                        <td class="md:px-2">{{ number_format($product['price'], 2) }}</td>
                         <td class="px-2">
                             <input wire:model.lazy="cart.{{$product['id']}}.quantity" type="number" min="1" value="{{ $product['quantity']}}" class="w-20 text-center rounded-lg">
                         </td>
@@ -53,7 +53,7 @@
                             </div>
                         </td>
                         @endif
-                        <td class="px-2">{{ $product['quantity']* $product['price']}}</td>
+                        <td class="px-2">{{ number_format($product['quantity']* $product['price'],2)}}</td>
                         <td class="px-2">
                             <button wire:click="removeCart({{$product['id']}})" class="text-red-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -82,7 +82,7 @@
                             {{__('proceed.items')}} : {{$items}}
                         </td>
                         <td colspan="2">
-                           {{__('proceed.total', ['total'=>$total])}}
+                           {{__('proceed.total', ['total'=>number_format($total,2)])}}
                         </td>
                     </tr>
                 </tbody>
@@ -202,7 +202,7 @@
             <div class="bg-gray-400 pl-6 pr-3 rounded-b-lg mt-3 pb-4">
                 
                 <h2>1 {{$paymentMethod->first_instruction}}</h2>
-                <p>2 {{__('proceed.transfer',  ['ammount' => $total])}}</p>
+                <p>2 {{__('proceed.transfer',  ['ammount' => number_format($total,2)])}}</p>
                 @foreach(json_decode($paymentMethod->second_instruction) as $instruction)
                     <p class="pl-3">{{$instruction}}</p>
                 @endforeach
