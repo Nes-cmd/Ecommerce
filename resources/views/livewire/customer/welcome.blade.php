@@ -47,7 +47,7 @@
                 </a>
                 <div class="p-2">
                     <div class="text-gray-800">
-                        <a href="{{route('customer.detail', $product->id)}}" class="truncate">{{$product->name }} <i class="text-green-600 text-md">{{$product->price .' birr'}}</i></a>
+                        <a href="{{route('customer.detail', $product->id)}}" class="truncate">{{$product->name }} <i class="text-green-600 text-md">{{number_format($product->price) .' birr'}}</i></a>
                     </div>
                     <div class="flex md:flex-row flex-col justify-between">
                         <button wire:click="$emit('toCart' , {{$product->id}} )" class="bg-gradient-to-r from-red-400 to-pink-800 rounded-full py-2 px-4 h-6 flex justify-center items-center mb-2">
