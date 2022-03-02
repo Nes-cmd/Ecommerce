@@ -51,6 +51,23 @@
                         @enderror
                     </span>
                 </div>
+                
+                <div class="pb-3">
+                    <textarea wire:model="description" name="" id="" rows="4" class="bg-gray-600 w-full rounded-2xl text-white px-2 placeholder-gray-400" placeholder="Detail about product"></textarea>
+                    <span class="text-red-600">
+                        @error('description')
+                            <h2>{{ $message }}</h2>
+                        @enderror
+                    </span>
+                </div>
+                <div class="pb-3">
+                    <textarea wire:model="operation" name="" id="" rows="4" class="bg-gray-600 w-full rounded-2xl text-white px-2 placeholder-gray-400" placeholder="Working operation (Optional)"></textarea>
+                    <span class="text-red-600">
+                        @error('operation')
+                            <h2>{{ $message }}</h2>
+                        @enderror
+                    </span>
+                </div>
                 <div class="pb-3 h-18">
                     <div class="items-center flex bg-gray-600 h-12 rounded-2xl">
                         <label for="photo" class="text-white pl-2">Photo</label>
@@ -61,22 +78,7 @@
                             <h2>{{ $message }}</h2>
                         @enderror
                     </span>
-                </div>
-                <div class="pb-3">
-                    <textarea wire:model="description" name="" id="" rows="4" class="bg-gray-600 w-full rounded-2xl text-white px-2 placeholder-gray-100" placeholder="Detail about product"></textarea>
-                    <span class="text-red-600">
-                        @error('description')
-                            <h2>{{ $message }}</h2>
-                        @enderror
-                    </span>
-                </div>
-                <div class="pb-3">
-                    <textarea wire:model="operation" name="" id="" rows="4" class="bg-gray-600 w-full rounded-2xl text-white px-2 placeholder-gray-100" placeholder="Working operation (Optional)"></textarea>
-                    <span class="text-red-600">
-                        @error('operation')
-                            <h2>{{ $message }}</h2>
-                        @enderror
-                    </span>
+                    @if($photo_url)<img width="400" height="300" src="{{$photo_url->temporaryUrl()}}" alt="">@endif
                 </div>
                 <div class="flex justify-end">
                     <button wire:click="addProduct" class="bg-green-600 h-12 w-1/3 rounded-2xl self-start text-white">
