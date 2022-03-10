@@ -1,1 +1,69 @@
-@font-face{font-family:'Helvetica';src:url("../font/Helvetica-Light.otf")}body .slider-container.first-sample{width:100%;height:350px;border:2px solid #1c1c1c;border-radius:3px;margin:0 auto 50px;position:relative}body .slider-container.first-sample .slider{height:100%}body .slider-container.first-sample .slider .slide-wrapper{overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}body .slider-container.first-sample .slider .slide-tracker .my-fr-current .item::before{background-color:rgba(0,0,0,0)}body .slider-container.first-sample .slider .item{width:100%;height:100%;overflow:hidden;position:relative}body .slider-container.first-sample .slider .item::before{content:'';position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,0.8);transition:background-color 1s}body .slider-container.first-sample .slider .item img{width:100%;height:100%;object-fit:cover;object-position:center center}body .slider-container.first-sample .prev-slide,body .slider-container.first-sample .next-slide{position:absolute;top:50%;transform:translateY(-50%);font-size:50px;cursor:pointer;color:#888;transition:color .3s}body .slider-container.first-sample .prev-slide:hover,body .slider-container.first-sample .next-slide:hover{color:#ccc}body .slider-container.first-sample .prev-slide{left:-70px}body .slider-container.first-sample .next-slide{right:-70px}
+@font-face {
+    font-family: "Helvetica";
+    src: url("../font/Helvetica-Light.otf");
+}
+body .slider-container.first-sample {
+    width: 100%;
+    height: 350px;
+    border: 2px solid #1c1c1c;
+    border-radius: 3px;
+    margin: 0 auto 50px;
+    position: relative;
+}
+body .slider-container.first-sample .slider {
+    height: 100%;
+}
+body .slider-container.first-sample .slider .slide-wrapper {
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+body .slider-container.first-sample .slider .slide-tracker .my-fr-current .item::before {
+    background-color: rgba(0, 0, 0, 0);
+}
+body .slider-container.first-sample .slider .item {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: hidden;
+}
+body .slider-container.first-sample .slider .item::before {
+    content: "";
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: background-color 1s;
+}
+body .slider-container.first-sample .slider .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+body .slider-container.first-sample .prev-slide,
+body .slider-container.first-sample .next-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s;
+}
+body .slider-container.first-sample .prev-slide:hover,
+body .slider-container.first-sample .next-slide:hover {
+    color: #ccc;
+}
+body .slider-container.first-sample .prev-slide {
+    left: -70px;
+}
+body .slider-container.first-sample .next-slide {
+    right: -70px;
+}
+/* //////////////// */
+
