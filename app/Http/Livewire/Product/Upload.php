@@ -27,7 +27,7 @@ class Upload extends Component
         // session()->flash('success', 'Categroy added successfilly');
         $this->emit('listenAlert', ['message' => 'Categroy added successfully.', 'type' => 'success']);
     }
-    public function addProduct()
+    public function addProduct() 
     {
         $validated = $this->validate([
             'name' => ['required', 'max:60'],
@@ -39,7 +39,7 @@ class Upload extends Component
         ]);
         
         // $photo = \Storage::put('public/products', $this->photo_url); 
-        $image = Image::make($this->photo_url)->resize(400,300);
+        $image = Image::make($this->photo_url)->resize(400,300);//w,h
         $name = 'products/'.$this->photo_url->hashName();
         $image->save('storage/'.$name, 75, 'jpeg');
         

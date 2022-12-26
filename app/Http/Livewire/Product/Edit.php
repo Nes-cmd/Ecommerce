@@ -54,7 +54,7 @@ class Edit extends Component
         if(isset($this->images[1])){
             $photo = \Storage::put('public/products', $this->images[1]);
             $this->photo['photo_2'] = substr($photo, 7);
-        }
+        } 
         if(isset($this->images[2])){
             $photo = \Storage::put('public/products', $this->images[2]);
             $this->photo['photo_3'] = substr($photo, 7);

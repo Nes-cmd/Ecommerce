@@ -11,24 +11,3 @@
 ## The E-Commerce website developed by Nesru Sadik
 
 E-commerce website developed with laravel framework, livewire component, tailwind-css front end framework 
-
-## Screen shoots of some pages are shown below.
-
-### Banner and Product slider page
- <img src="public/intro/banner_and _slider.png">
-
-### Products
-<img src="public/intro/products.png" >
-
-### Cart and payment proceed page
-<img src="public/intro/cart_and_payment_page.png">
-
-### Product detail page
-<img src="public/intro/detail_view.png">
-
-### Product Editor for admin
-<img src="public/intro/admin.png">
-
-### Example for The clients who need E-commerce website with laravel and livewire.
-
-
